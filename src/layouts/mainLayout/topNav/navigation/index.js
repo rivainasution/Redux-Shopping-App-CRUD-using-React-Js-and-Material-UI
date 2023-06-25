@@ -2,14 +2,12 @@ import { Box, Typography } from "@mui/material";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { IconCalendar, IconTime } from "../../../../assets/topNav/icons";
 import { DataLogin } from "../../../../configs/data";
 import { getNavigation } from "../../../../features/navigation";
 
 const NavigationTopbar = () => {
     const navigation = useSelector(getNavigation);
-    const navigate = useNavigate();
     const getData = DataLogin();
 
     //   --- Date ---
@@ -56,7 +54,7 @@ const NavigationTopbar = () => {
                         lineHeight={'33px'}
                         color={'#171717'}
                     >
-                        {greeting}, {getData.namaLengkap}
+                        Good {greeting}, {getData.namaLengkap}
                     </Typography>
                     <Box display={'flex'} alignItems={'center'} mt={'5px'}>
                         <IconCalendar />
